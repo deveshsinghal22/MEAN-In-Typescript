@@ -5,8 +5,9 @@ let User = require('../models/User');
 
 router.get('/getMyProfile', (req, res, next) => {
     User.findById(req.session.user._id).exec(function(err, user) {
+        let responseObj
         if (!err) {
-            let responseObj = {
+            responseObj = {
                 name: user.providerData.displayName,
                 email: user.email,
                 points: user.totalPoints,
