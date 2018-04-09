@@ -1,2 +1,7 @@
-# MEAN-In-Typescript
-MEAN boilerplate for Typescript (server and client). This is custom and entry level boilerplate so it is at extremely basic level.
+# Type 1
+  Angular and express both in TS
+
+#type2
+  Angular5 in TS and express in JS
+  Added socket support
+  Added session support
