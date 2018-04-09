@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" [routerLink]="['/']">Interviews</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" *ngIf="userSession && userSession.role == 'admin'">
+        <a class="nav-link" [routerLink]="['superadmin']">Admin</a>
+      </li>
+    </ul>
+    <span class="text-white" *ngIf="userSession">
+      <a [routerLink]="['user/profile']" class="text-white">
+      <img [src]="userSession.imageUrl" class="user-image" width="50" /> {{userSession.email}} </a>
+      <a href="/api/auth/logout" class="btn btn-primary" (click)="handleLogout()">Logout</a>
+    </span>
+    <span *ngIf="!userSession">
+      <a href="/api/auth/google" class="btn btn-primary">Login</a>
+    </span>
+  </div>
+</nav>

@@ -5,3 +5,4 @@
   Angular5 in TS and express in JS
   Added socket support
   Added session support
+  Added google login
